@@ -1,15 +1,33 @@
 <header class="header">
   <div class="app-title">MessageGroupApp</div>
+  <ul class='lists'>
+    <% if user_signed_in? %>
+      <li ><%= link_to current_user.nickname, "#", class: "user-nickname" %></li> 
+      <li ><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li> 
+    <% else %>
+      <li ><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li ><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+    <% end %>
+  </ul>
 </header>
 <div class="first-content">
-  <div class="main-title">メッセージアプリです</div>
-  <div class="sub-title">application for you</div>
+  <h1 class="comment">様々なシチュエーションのメッセージを</h1>
+  <h2 class="comment">もっとシンプルに</h2>
+  <h3 class="comment">もっと早く</h3>
 </div>
 <div class="second-content">
-  <div class="groups">ユーザー名さんのグループ一覧</div>
+  <div class="groups">
+    <% if user_signed_in? %>
+      <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+      さんのグループ一覧
+    <% end %>
+  </div>
   <ul class="group-lists">
     <li class="group-list">ビジネス</li>
     <li class="group-list">家族</li>
     <li class="group-list">友人</li>
   </ul>
+  <%= link_to new_group_path, class: 'purchase-btn' do %>
+  <span class='purchase-btn-text'>グループ作成</span>
+  <% end %>
 </div>
