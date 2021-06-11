@@ -1,0 +1,57 @@
+
+.header {
+  background-color: gray;
+  width: 100%;
+  height: 100px;
+}
+
+.app-title {
+  font-size: 60px;
+  font-weight: bolder;
+  font-family:'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+.first-content {
+  background-image: url(https://cdn.pixabay.com/photo/2017/04/20/10/11/questions-2245264__480.jpg);
+  background-size: cover;
+  width: 80%;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.sub-title {
+  font-size: 25px;
+}
+
+.second-content {
+  width: 100%;
+  height: 500px;
+}
+
+.groups {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.group-lists {
+  background-color: teal;
+  height: 400px;
+  margin: 20px auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.group-list {
+  font-size: 30px;
+  color: antiquewhite;
+}
