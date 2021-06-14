@@ -48,26 +48,43 @@
   height: 500px;
 }
 
-.groups {
+.groups-user-nickname {
   text-align: center;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
 }
 
-.group-lists {
-  background-color: teal;
-  height: 400px;
+.group-list-area {
+  background-color: rgb(206, 224, 224);
+  height: 1000px;
   margin: 20px auto;
   width: 80%;
   display: flex;
   justify-content: space-around;
-
 }
 
-.group-list {
+.job-group, .family-group, .friend-group, .group {
+  display: block;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.group-title {
+  background-color: ghostwhite;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.group-lists {
+  margin-top: 40px;
+  background-color: ghostwhite;
+}
+
+.group-name {
   font-size: 30px;
-  color: antiquewhite;
+  color: black;
 }
+
 /* グループ作成ボタン */
 
 .purchase-btn {

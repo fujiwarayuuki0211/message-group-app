@@ -16,17 +16,76 @@
   <h3 class="comment">もっと早く</h3>
 </div>
 <div class="second-content">
-  <div class="groups">
+  <div class="groups-user-nickname">
     <% if user_signed_in? %>
       <%= link_to current_user.nickname, "#", class: "user-nickname" %>
-      さんのグループ一覧
+      さんのグループ
     <% end %>
   </div>
-  <ul class="group-lists">
-    <li class="group-list">ビジネス</li>
-    <li class="group-list">家族</li>
-    <li class="group-list">友人</li>
-  </ul>
+  <div class='group-list-area'>
+    <% if user_signed_in? && current_user.groups.present? %>
+      <div class="family-group">
+        <div class='group-title'>家族</div>
+        <% @family_groups.each do |group|%>
+          <div class='group-lists'>
+            <%= link_to group_messages_path(group.id) do %>
+              <div class='group-name'>
+                <%= group.name %>
+              </div>
+              <div class='group-category'>
+                <%= group.category.name %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="job-group">
+        <div class='group-title'>仕事</div>
+        <% @job_groups.each do |group|%>
+          <div class='group-lists'>
+            <%= link_to group_messages_path(group.id) do %>
+              <div class='group-name'>
+                <%= group.name %>
+              </div>
+              <div class='group-category'>
+                <%= group.category.name %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="friend-group">
+        <div class='group-title'>友達</div>
+        <% @friend_groups.each do |group|%>
+          <div class='group-lists'>
+            <%= link_to group_messages_path(group.id) do %>
+              <div class='group-name'>
+                <%= group.name %>
+              </div>
+              <div class='group-category'>
+                <%= group.category.name %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="group">
+        <div class='group-title'>その他</div>
+        <% @group.each do |group|%>
+          <div class='group-lists'>
+            <%= link_to group_messages_path(group.id) do %>
+              <div class='group-name'>
+                <%= group.name %>
+              </div>
+              <div class='group-category'>
+                <%= group.category.name %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
   <%= link_to new_group_path, class: 'purchase-btn' do %>
   <span class='purchase-btn-text'>グループ作成</span>
   <% end %>

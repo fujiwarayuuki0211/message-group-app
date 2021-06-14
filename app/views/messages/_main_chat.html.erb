@@ -1,0 +1,23 @@
+<div class="chat-header">
+  <div class="left-header">
+    <div class="header-title">
+      <%= @group.name %>
+    </div>
+  </div>
+  <div class="right-header">
+    <div class="header-button">
+      <%= link_to "トップページへ戻る", root_path %>
+    </div>
+  </div>
+</div>
+
+<div class="messages">
+  <%= render partial: 'messages', collection: @messages %>
+</div>
+
+<%= form_with model: [ @group, @message], class: 'form', local: true do |f| %>
+  <div class="form-input">
+    <%= f.text_field :content, class: 'form-message', placeholder: 'メッセージを入力してください' %>
+  </div>
+  <%= f.submit '送信', class: 'form-submit' %>
+<% end %>
