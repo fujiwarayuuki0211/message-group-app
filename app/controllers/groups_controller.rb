@@ -1,11 +1,7 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
 
   def index
-    @family_groups = Group.where(category_id: 2).order('created_at DESC')
-    @job_groups = Group.where(category_id: 3).order('created_at DESC')
-    @friend_groups = Group.where(category_id: 4).order('created_at DESC')
-    @group = Group.where(category_id: 5).order('created_at DESC')
   end
 
   def new
@@ -21,9 +17,15 @@ class GroupsController < ApplicationController
     end
   end
 
+  def destroy
+    group = Group.find(params[:id])
+    group.destroy
+    redirect_to root_path
+  end
+
   private
 
   def group_params
-    params.require(:group).permit(:name, :category_id, user_ids: [])
+    params.require(:group).permit(:name, :image, :category_id, user_ids: [])
   end
 end

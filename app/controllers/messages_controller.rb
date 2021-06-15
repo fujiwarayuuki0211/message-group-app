@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @group = Group.find(params[:group_id])
+    @users = @group.users
     @messages = @group.messages.includes(:user)
   end
 
@@ -13,6 +14,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path(@group)
     else
+      @users = @group.users
       @messages = @group.messages.includes(:user)
       render :index
     end
@@ -21,6 +23,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content).merge(user_id: current_user.id)
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
 end

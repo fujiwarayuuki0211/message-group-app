@@ -6,8 +6,13 @@
 
 <div class="rooms">
     <div class="room">
+      <%= @group.name %>のメンバー
       <div class="room-name">
-        <%= @group.name %>
+        <% @users.each do |user| %>
+          <div class='users-nickname'>
+            <%= user.nickname %>
+          </div>
+        <% end %>
       </div>
     </div>
 </div>

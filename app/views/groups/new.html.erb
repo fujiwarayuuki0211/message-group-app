@@ -11,6 +11,14 @@
     </div>
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'>
+        <%= f.label :グループトップ画像, class: 'chat-room-form__label'%>
+      </div>
+      <div class='chat-room-form__field--right'>
+        <%= f.file_field :image, class: 'chat__room_name chat-room-form__input' %>
+      </div>
+    </div>
+    <div class='chat-room-form__field'>
+      <div class='chat-room-form__field--left'>
         <%= f.label :メッセージグループのカテゴリ, class: 'chat-room-form__label'%>
       </div>
       <div class='chat-room-form__field--right'>
