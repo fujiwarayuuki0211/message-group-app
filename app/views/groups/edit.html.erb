@@ -1,15 +1,12 @@
 <div class='chat-room-form'>
-  <h1>新規メッセージグループ作成</h1>
+  <h1>新規メッセージグループ編集</h1>
   <%=form_with model: @group, local: true do |f|%>
-
-    <%= render 'layouts/error_messages', model: f.object %>
-
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'>
         <%= f.label :メッセージグループ名, class: 'chat-room-form__label'%>
       </div>
       <div class='chat-room-form__field--right'>
-        <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: 'メッセージグループ名を入力してください'%>
+        <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: 'メッセージグループ名を入力してください', autofocus: true%>
       </div>
     </div>
     <div class='chat-room-form__field'>
@@ -25,7 +22,7 @@
         <%= f.label :メッセージグループのカテゴリ, class: 'chat-room-form__label'%>
       </div>
       <div class='chat-room-form__field--right'>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"genre-select"}) %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"genre-select"}), autofocus: true %>
       </div>
     </div>
     <div class='chat-room-form__field'>
@@ -33,8 +30,8 @@
         <label class='chat-room-form__label' for='chat_room_チャットメンバー'>グループメンバー</label>
       </div>
       <div class='chat-room-form__field--right'>
-        <select name="group[user_ids][]" multiple>
-          <option value="", disabled selected style="display:none;">メッセージするユーザーを選択してください</option>
+        <select name="group[user_ids][]">
+          <option value="">メッセージするユーザーを選択してください</option>
           <% User.where.not(id: current_user.id).each do |user| %>
             <option value=<%= user.id %>><%= user.nickname %></option>
           <% end %>

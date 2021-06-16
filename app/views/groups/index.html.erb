@@ -35,8 +35,8 @@
                   <div class='group-name'>
                     <%= group.name %>
                   </div>
-                  <div class='group-category'>
-                    <%= group.category.name %>
+                  <div class='group-image'>
+                    <%= image_tag group.image.variant(resize: '250x200'), class: 'message-image' if group.image.attached? %>
                   </div>
                 <% end %>
               </div>
@@ -52,8 +52,8 @@
                   <div class='group-name'>
                     <%= group.name %>
                   </div>
-                  <div class='group-category'>
-                    <%= group.category.name %>
+                  <div class='group-image'>
+                    <%= image_tag group.image.variant(resize: '250x200'), class: 'message-image' if group.image.attached? %>
                   </div>
                 <% end %>
               </div>
@@ -69,8 +69,8 @@
                   <div class='group-name'>
                     <%= group.name %>
                   </div>
-                  <div class='group-category'>
-                    <%= group.category.name %>
+                  <div class='group-image'>
+                    <%= image_tag group.image.variant(resize: '250x200'), class: 'message-image' if group.image.attached? %>
                   </div>
                 <% end %>
               </div>
@@ -86,8 +86,8 @@
                   <div class='group-name'>
                     <%= group.name %>
                   </div>
-                  <div class='group-category'>
-                    <%= group.category.name %>
+                  <div class='group-image'>
+                    <%= image_tag group.image.variant(resize: '250x200'), class: 'message-image' if group.image.attached? %>
                   </div>
                 <% end %>
               </div>
