@@ -25,7 +25,7 @@ a {
 .logout, .user-nickname, .login, .sign-up {
   text-decoration: none;
   padding-right: 15px;
-  color: skyblue;
+  color: black;
 }
 
 /* アプリケーション概要部分 */
@@ -76,6 +76,7 @@ a {
   text-align: center;
   border-radius: 20px;
   margin-top: 20px;
+  padding: 5px;
 }
 
 .group-lists {

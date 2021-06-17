@@ -3,6 +3,8 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
-      tweet:
-        text: テキスト
+      group:
+        name: メッセージグループ名
         image: 画像
+        category_id: カテゴリー
+        user_ids: メンバー
