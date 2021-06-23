@@ -1,8 +1,54 @@
 <div class="wrapper">
   <div class="side-bar">
-    <%= render "side_bar" %>
+    <div class="side-bar-header">
+      <div class="header-user-name">
+        <%= link_to current_user.nickname,'#' %>
+      </div>
+    </div>
+
+    <div class="side-bar-footer">
+      <div class="group-name">
+        <%= @group.name %>のメンバー
+      </div>
+      <div class="group-user-name">
+        <% @users.each do |user| %>
+          <div class='users-nickname'>
+            <%= user.nickname %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="chat">
-    <%= render "main_chat" %>
+    <div class="chat-header">
+      <div class="left-header">
+        <div class="header-title">
+          <%= @group.name %>
+        </div>
+      </div>
+      <div class="right-header">
+        <div class="header-button">
+          <%= link_to "グループを削除", group_path(@group.id), method: :delete %>
+        </div>
+        <div class="header-button">
+          <%= link_to "トップページへ戻る", root_path %>
+        </div>
+      </div>
+    </div>
+
+    <div class="messages">
+      <%= render partial: 'messages', collection: @messages %>
+    </div>
+
+    <%= form_with model: [ @group, @message], class: 'form', local: true do |f| %>
+      <div class="form-input">
+        <%= f.text_field :content, class: 'form-message', placeholder: 'メッセージを入力してください' %>
+        <label class="form-image">
+          <span class="image-file">画像</span>
+          <%= f.file_field :image, class: 'hidden' %>
+        </label>
+      </div>
+      <%= f.submit '送信', class: 'form-submit' %>
+    <% end %>
   </div>
 </div>

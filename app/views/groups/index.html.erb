@@ -32,11 +32,11 @@
             <% if group.category_id == 2 %>
               <div class='group-lists'>
                 <%= link_to group_messages_path(group.id) do %>
-                  <div class='group-name'>
-                    <%= group.name %>
-                  </div>
                   <div class='group-image'>
                     <%= image_tag group.image.variant(resize: '250x200'), class: 'message-image' if group.image.attached? %>
+                  </div>
+                  <div class='group-name'>
+                    <%= group.name %>
                   </div>
                 <% end %>
               </div>
@@ -49,11 +49,11 @@
             <% if group.category_id == 3 %>
               <div class='group-lists'>
                 <%= link_to group_messages_path(group.id) do %>
-                  <div class='group-name'>
-                    <%= group.name %>
-                  </div>
                   <div class='group-image'>
                     <%= image_tag group.image.variant(resize: '250x200'), class: 'message-image' if group.image.attached? %>
+                  </div>
+                  <div class='group-name'>
+                    <%= group.name %>
                   </div>
                 <% end %>
               </div>
@@ -66,11 +66,11 @@
             <% if group.category_id == 4 %>
               <div class='group-lists'>
                 <%= link_to group_messages_path(group.id) do %>
-                  <div class='group-name'>
-                    <%= group.name %>
-                  </div>
                   <div class='group-image'>
                     <%= image_tag group.image.variant(resize: '250x200'), class: 'message-image' if group.image.attached? %>
+                  </div>
+                  <div class='group-name'>
+                    <%= group.name %>
                   </div>
                 <% end %>
               </div>
@@ -83,11 +83,11 @@
             <% if group.category_id == 5 %>
               <div class='group-lists'>
                 <%= link_to group_messages_path(group.id) do %>
+                  <div class='group-image'>
+                    <%= image_tag group.image.variant(resize: '250x200'), class: 'message-image' if group.image.attached? %>
+                  </div>
                   <div class='group-name'>
                     <%= group.name %>
-                  </div>
-                  <div class='group-image'>
-                    <%#= image_tag group.image.variant(resize: '250x200'), class: 'message-image' if group.image.attached? %>
                   </div>
                 <% end %>
               </div>

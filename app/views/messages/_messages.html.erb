@@ -1,19 +1,16 @@
 <div class="message">
   <div class="upper-message">
     <div class="message-user">
-      <!-- 投稿したユーザー名情報を出力する -->
       <%= messages.user.nickname %>
     </div>
     <div class="message-date">
-      <!-- 投稿した時刻を出力する -->
       <%= messages.created_at.to_s(:datetime_jp) %>
     </div>
   </div>
   <div class="lower-message">
     <div class="message-content">
-      <!-- 投稿したメッセージ内容を記述する -->
       <%= messages.content %>
     </div>
-    <%= image_tag messages.image.variant(resize: '500x500'), class: 'message-image' if messages.image.attached? %>
+    <%= image_tag messages.image.variant(resize: '300x300'), class: 'message-image' if messages.image.attached? %>
   </div>
 </div>
