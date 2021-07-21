@@ -2,7 +2,7 @@
   <div class="app-title">MessageGroupApp</div>
   <ul class='lists'>
     <% if user_signed_in? %>
-      <li ><%= link_to current_user.nickname, "#", class: "user-nickname" %></li> 
+      <li ><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li> 
       <li ><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li> 
     <% else %>
       <li ><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
@@ -18,7 +18,7 @@
 <div class="second-content">
   <div class="groups-user-nickname">
     <% if user_signed_in? %>
-      <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+      <%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %>
       さんのグループ
     <% else %>
       <div class="app-title">MessageGroupAppへようこそ！！</div>
